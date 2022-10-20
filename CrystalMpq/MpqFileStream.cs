@@ -252,11 +252,11 @@ namespace CrystalMpq
 
 			PatchMD5ChunkData md5ChunkData;
 			bool hasMD5 = false;
+			var chunkHeader = stackalloc uint[2];
 			
 			while (true)
 			{
 				long chunkPosition = Position;
-				var chunkHeader = stackalloc uint[2];
 
 				if (Read((byte*)chunkHeader, 8) != 8) throw new EndOfStreamException();
 				if (!BitConverter.IsLittleEndian) CommonMethods.SwapBytes(chunkHeader, 2);
@@ -455,7 +455,6 @@ namespace CrystalMpq
 				return Read(bufferPointer + offset, count);
 		}
 
-		[CLSCompliant(false)]
 		public unsafe int Read(byte* buffer, int count)
 		{
 			if (count < 0) throw new ArgumentOutOfRangeException("count");

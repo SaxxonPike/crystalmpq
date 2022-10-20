@@ -6,7 +6,7 @@ namespace SevenZip.Compression.LZMA
 {
 	using RangeCoder;
 
-	internal class Decoder : ICoder, ISetDecoderProperties // ,System.IO.Stream
+	public class Decoder : ICoder, ISetDecoderProperties // ,System.IO.Stream
 	{
 		class LenDecoder
 		{

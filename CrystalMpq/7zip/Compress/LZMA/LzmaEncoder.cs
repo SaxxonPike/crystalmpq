@@ -6,7 +6,7 @@ namespace SevenZip.Compression.LZMA
 {
 	using RangeCoder;
 
-	internal class Encoder : ICoder, ISetCoderProperties, IWriteCoderProperties
+	public class Encoder : ICoder, ISetCoderProperties, IWriteCoderProperties
 	{
 		enum EMatchFinderType
 		{

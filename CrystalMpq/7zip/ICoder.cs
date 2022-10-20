@@ -20,7 +20,7 @@ namespace SevenZip
 		public InvalidParamException(): base("Invalid Parameter") { }
 	}
 
-	internal interface ICodeProgress
+	public interface ICodeProgress
 	{
 		/// <summary>
 		/// Callback progress.
@@ -34,7 +34,7 @@ namespace SevenZip
 		void SetProgress(Int64 inSize, Int64 outSize);
 	};
 
-	internal interface ICoder
+	public interface ICoder
 	{
 		/// <summary>
 		/// Codes streams.
@@ -75,7 +75,7 @@ namespace SevenZip
 	/// <summary>
 	/// Provides the fields that represent properties idenitifiers for compressing.
 	/// </summary>
-	internal enum CoderPropID
+	public enum CoderPropID
 	{
 		/// <summary>
 		/// Specifies default property.
@@ -98,15 +98,15 @@ namespace SevenZip
 		/// </summary>
 		BlockSize,
 		/// <summary>
-		/// Specifies number of postion state bits for LZMA (0 &lt;= x &lt;= 4).
+		/// Specifies number of postion state bits for LZMA (0 <= x <= 4).
 		/// </summary>
 		PosStateBits,
 		/// <summary>
-		/// Specifies number of literal context bits for LZMA (0 &lt;= x &lt;= 8).
+		/// Specifies number of literal context bits for LZMA (0 <= x <= 8).
 		/// </summary>
 		LitContextBits,
 		/// <summary>
-		/// Specifies number of literal position bits for LZMA (0 &lt;= x &lt;= 4).
+		/// Specifies number of literal position bits for LZMA (0 <= x <= 4).
 		/// </summary>
 		LitPosBits,
 		/// <summary>
@@ -140,17 +140,17 @@ namespace SevenZip
 	};
 
 
-	internal interface ISetCoderProperties
+	public interface ISetCoderProperties
 	{
 		void SetCoderProperties(CoderPropID[] propIDs, object[] properties);
 	};
 
-	internal interface IWriteCoderProperties
+	public interface IWriteCoderProperties
 	{
 		void WriteCoderProperties(System.IO.Stream outStream);
 	}
 
-	internal interface ISetDecoderProperties
+	public interface ISetDecoderProperties
 	{
 		void SetDecoderProperties(byte[] properties);
 	}
